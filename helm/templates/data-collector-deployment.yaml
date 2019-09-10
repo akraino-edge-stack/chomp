@@ -1,0 +1,41 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: ./kompose convert -c
+    kompose.version: 1.17.0 (a74acad)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: data-collector
+  name: data-collector
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: data-collector
+      annotations:
+        checksum/config: {{.Files.Get (print "values.yaml") | sha256sum}}  # yamllint disable-line rule:line-length
+    spec:
+      containers:
+        - name: data-collector
+          env:
+            - name: CONFIG_DIR
+              value: /configdir
+          image: "12.54.232.123:5000/org.akraino.chomp/chomp-data-collector:{{.Values.VERSION}}"  # yamllint disable-line rule:line-length
+          resources: {}
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - mountPath: /configdir
+              name: data-collector-config
+      restartPolicy: Always
+      volumes:
+        - name: data-collector-config
+          configMap:
+            name: data-collector-cm
+status: {}

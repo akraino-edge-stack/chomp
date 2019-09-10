@@ -1,0 +1,8 @@
+---
+name: helm-chomp
+description: Helm Chart for helm-chomp
+version: 0.0.1
+keywords:
+  - helm-chomp
+sources:
+home:

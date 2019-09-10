@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: corrlog-count-cm
+data:
+  corrlog_count.yaml: |-
+    ---
+    application: {{.Values.corrlog_count.application | quote}}
+    period: {{.Values.corrlog_count.period | quote}}
+    offset: {{.Values.corrlog_count.offset | quote}}
+    data_pub_delay: {{.Values.corrlog_count.data_pub_delay}}
+    data_sub_delay: {{.Values.corrlog_count.data_sub_delay}}
+    data_read_delay: {{.Values.corrlog_count.data_read_delay}}
+    counter_offset: {{.Values.corrlog_count.counter_offset | quote}}
+    kpi_offset: {{.Values.corrlog_count.kpi_offset | quote}}
+    siglistdir: {{.Values.corrlog_count.siglistdir | quote}}
+    corrsiglistfile: {{.Values.corrlog_count.corrsiglistfile | quote}}
+    query_proc_count: {{.Values.corrlog_count.query_proc_count}}
+    corr_proc_count: {{.Values.corrlog_count.corr_proc_count}}
+    regexfile: {{.Values.corrlog_count.regexfile | quote}}
+    redis_pub_channel: {{.Values.corrlog_count.redis_pub_channel | quote}}
+    redis_host: {{.Values.redis.host | quote}}
+    redis_port: {{.Values.redis.port}}
+    redis_db: {{.Values.redis.db}}
+  {{- $root := "files/corrlog-count"}}
+  corrsiglist: {{$.Files.Get (print $root "/corrsiglist") | quote}}
+  {{- range $path, $bytes := .Files.Glob "files/corrlog-count/**.json"}}
+  corrlogsignatures_{{base $path}}: {{$.Files.Get $path | quote}}
+  {{- end}}

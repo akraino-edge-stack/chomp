@@ -1,0 +1,43 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: ./kompose convert -c
+    kompose.version: 1.17.0 (a74acad)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: redis
+  name: redis
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: redis
+      annotations:
+        checksum/config: {{.Files.Get (print "files/redis/redis.conf") | sha256sum}}  # yamllint disable-line rule:line-length
+    spec:
+      containers:
+        - name: redis
+          command:
+            - redis-server
+            - /usr/local/etc/redis/redis.conf
+          image: 12.54.232.123:5000/redis:alpine
+          ports:
+            - containerPort: 6379
+          resources: {}
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - mountPath: /usr/local/etc/redis/redis.conf
+              name: redis-config
+      restartPolicy: Always
+      volumes:
+        - name: redis-config
+          configMap:
+            name: redis-cm
+status: {}

@@ -1,0 +1,58 @@
+---
+image:
+  repo: "CHANGE_ME"  # enter image repo here
+
+data_collector:
+  application: "chomp"
+  period: "1m"
+  offset: "1h"
+  data_pub_delay: 50
+  siglistdir: "signatures"
+  siglistfile: "signaturelist"
+  query_proc_count: 3
+  query_timeout: 2
+  regexfile: "regex_list.txt"
+  redis_channel: "counters"
+
+corrlog_count:
+  application: "chomp"
+  period: "1m"
+  offset: "1h"
+  data_pub_delay: 50
+  data_sub_delay: 0
+  data_read_delay: 20
+  counter_offset: "1m"
+  kpi_offset: "1m"
+  siglistdir: "signatures"
+  corrsiglistfile: "corrsiglist"
+  query_proc_count: 3
+  corr_proc_count: 3
+  regexfile: "regex_list.txt"
+  redis_pub_channel: "counters"
+
+singlelog_count:
+  period: 1
+  offset: 60
+  countersfile: "counters_list"
+  redis_pub_channel: "counters"
+
+kpi_pub:
+  waitSecs: 300
+  redis_sub_channel: "counters"
+  es_protocol: "http"
+  es_host: "CHANGE_ME"  # enter upload es host here
+  es_port: CHANGE_ME  # enter upload es port here
+  es_pathinfo: "AECPortalMgmt/chomp/upload"
+  es_timeout: 15
+
+redis:
+  host: "redis"
+  port: 6379
+  db: 0
+
+elasticsearch:
+  host: "CHANGE_ME"  # enter es host here
+  port: "CHANGE_ME"  # enter es port here
+  user: "CHANGE_ME"  # enter es user here
+  pswd: "CHANGE_ME"  # enter es pswd here
+  timeout: 15

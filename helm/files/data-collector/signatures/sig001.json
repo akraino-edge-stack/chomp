@@ -1,0 +1,13 @@
+{
+  "name":"sig_001",
+  "ignore":"no",
+  "event_name":["pod_create_e2e_succ", "pod_create_e2e_fail", "pod_create_e2e_complete"],
+  "application":"K-CHOMP",
+  "type":["single", "correlated"],
+  "query":"{\"query\": {\"bool\": {\"must\": [{\"match_phrase\": {\"log\": \"GET\"}}, {\"match_phrase\": {\"log\":\"pods\"}}, {\"match_phrase\": {\"log\": \"namespaces\"}}]}}}",
+  "regex":{
+    "pod":"apiserver_pod",
+    "namespace":"apiserver_namespace",
+    "latency":"apiserver_lat"
+  }
+}

@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-cm
+data:
+  redis.conf: {{tpl (.Files.Get "files/redis/redis.conf") . | quote}}

@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-collector-cm
+data:
+  data_collector.yaml: |-
+    ---
+    application: {{.Values.data_collector.application | quote}}
+    period: {{.Values.data_collector.period | quote}}
+    offset: {{.Values.data_collector.offset | quote}}
+    data_pub_delay: {{.Values.data_collector.data_pub_delay}}
+    siglistdir: {{.Values.data_collector.siglistdir | quote}}
+    siglistfile: {{.Values.data_collector.siglistfile | quote}}
+    query_proc_count: {{.Values.data_collector.query_proc_count}}
+    query_timeout: {{.Values.data_collector.query_timeout}}
+    regexfile: {{.Values.data_collector.regexfile | quote}}
+    redis_host: {{.Values.redis.host | quote}}
+    redis_port: {{.Values.redis.port}}
+    redis_db: {{.Values.redis.db}}
+    es_host: {{.Values.elasticsearch.host | quote}}
+    es_port: {{.Values.elasticsearch.port | quote}}
+    es_user: {{.Values.elasticsearch.user | quote}}
+    es_pswd: {{.Values.elasticsearch.pswd | quote}}
+    es_timeout: {{.Values.elasticsearch.timeout}}
+  {{- $root := "files/data-collector"}}
+  signaturelist: {{$.Files.Get (print $root "/signaturelist") | quote}}
+  regex_list.txt: {{$.Files.Get (print $root "/regex_list.txt") | quote}}
+  {{- range $path, $bytes := .Files.Glob "files/data-collector/**.json"}}
+  "signatures_{{base $path}}": {{$.Files.Get $path | quote}}
+  {{- end}}

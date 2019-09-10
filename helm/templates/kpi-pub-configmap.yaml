@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kpi-pub-cm
+data:
+  kpi_pub.yaml: |-
+    ---
+    waitSecs: {{.Values.kpi_pub.waitSecs}}
+    redis_sub_channel: {{.Values.kpi_pub.redis_sub_channel | quote}}
+    es_protocol: {{.Values.kpi_pub.es_protocol | quote}}
+    es_host: {{.Values.kpi_pub.es_host | quote}}
+    es_port: {{.Values.kpi_pub.es_port}}
+    es_pathinfo: {{.Values.kpi_pub.es_pathinfo | quote}}
+    es_timeout: {{.Values.kpi_pub.es_timeout}}
+    redis_host: {{.Values.redis.host | quote}}
+    redis_port: {{.Values.redis.port}}
+    redis_db: {{.Values.redis.db}}

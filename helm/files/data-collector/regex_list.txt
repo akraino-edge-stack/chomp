@@ -1,0 +1,5 @@
+apiserver_lat,.+\((.+)s\).+
+apiserver_pod,.+\/pods\/(.+)\:\s\(
+apiserver_namespace,.+\/namespaces\/(.+)\/pods
+kubelet_pleg_pod,.+SyncLoop\s+\(PLEG\):\s\"([a-zA-Z0-9-]+).+
+kubelet_pleg_namespace,.+SyncLoop\s+\(PLEG\):\s\"[a-zA-Z0-9-]+\_([a-zA-Z0-9-]+)\(

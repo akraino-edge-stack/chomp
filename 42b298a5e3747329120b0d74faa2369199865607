@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e213d990_9d8fddfb",
+        "filename": "doc/source/howto.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "remove trailing spaces",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8305535a_6d50a515",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "remove trailing spaces",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc44d0e7_74b1288b",
+        "filename": "helm/templates/corrlog-count-deployment.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "hard coded IP address",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04a35c1c_22cb189e",
+        "filename": "helm/templates/data-collector-deployment.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "hard coded IP address?",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "124b7672_f66c569f",
+        "filename": "helm/templates/kpi-pub-deployment.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "hard coded IP address?",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4082089e_39beab19",
+        "filename": "helm/templates/redis-deployment.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "hard coded IP address?",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b36e037_41d72524",
+        "filename": "helm/templates/singlelog-count-deployment.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "hard coded IP address?  should this be a variable?",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fcdc6813_2a0653bd",
+        "filename": "verify.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-15T14:09:42Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "42b298a5e3747329120b0d74faa2369199865607",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    }
+  ]
+}

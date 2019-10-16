@@ -50,6 +50,23 @@
       "revId": "d66f890f1336e0135133253a4dbbf8f7d615625f",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7624e2fb_dd9f96e7",
+        "filename": "helm/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 45
+      },
+      "writtenOn": "2019-10-16T16:38:36Z",
+      "side": 1,
+      "message": "This should probably be CHANGE_ME also.\nAECPortalMgmt is specific to the Akraino portal",
+      "revId": "d66f890f1336e0135133253a4dbbf8f7d615625f",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
